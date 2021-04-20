@@ -5,7 +5,17 @@ class AdjacencyList{
   addNode(node = ""){
     if(!node.trim().length) return;
     this.nodes[node] = {}
-    return this;
+    return this.nodes;
+  }
+
+  removeNode(node){
+    delete this.nodes[node];
+    return this.nodes;
+  }
+
+  removeEdge(node1, node2){
+    delete this.nodes[node1][node2];
+    return this.nodes;
   }
 
   addEdge(node1 = "", node2 = "", weight = 0){
@@ -42,4 +52,6 @@ class AdjacencyList{
   }
 
 }
+
+
 
